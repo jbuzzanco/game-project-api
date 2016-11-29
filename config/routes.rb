@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'home/index'
+
+  resources :quotes, except: [:new, :edit]
   resources :games, except: [:new, :edit, :destroy]
   # this is the streaming interface
   get '/games/:id/watch' => 'games#watch'
